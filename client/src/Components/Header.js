@@ -11,7 +11,7 @@ function Header(){
                         </span>
                     </button>
                     <button className="topbar-toggler more"><i className="icon-options-vertical"></i></button>
-                    <a href="#" className="logo d-flex align-items-center mt-2">
+                    <a href="/" className="logo d-flex align-items-center mt-2">
                         <img src="https://www.bomcupom.com/wp-content/themes/bomcupom-novo/assets/images/bomcupom-marca.png" alt="navbar brand" className="navbar-brand" style={{ width: '215px', height: '45px' }} />
                     </a>
                 </div>
