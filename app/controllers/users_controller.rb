@@ -3,14 +3,15 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    @users = User.all
+    @users = User.select("id, email, name, birthday, gender").all
 
-    render json: @users
+    render json: {status: 'SUCCESS', message: 'Loaded users', data: @users}, status: :ok
   end
 
   # GET /users/1
   def show
-    render json: @user
+    @user = User.find(params[:id])
+    render json: {status: 'SUCCESS', message: 'Loaded user', data: @user}, status: :ok
   end
 
   # POST /users
@@ -18,24 +19,25 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      render json: @user, status: :created, location: @user
+      render json: {status: 'SUCCESS', message:'Saved user'}, status: :created
     else
-      render json: @user.errors, status: :unprocessable_entity
+      render json: {status: 'ERROR', message:'User not saved', data: @user.errors}, status: :unprocessable_entity
     end
   end
-
+  
   # PATCH/PUT /users/1
   def update
     if @user.update(user_params)
-      render json: @user
+      render json: {status: 'SUCCESS', message:'User updated'}, status: :ok
     else
-      render json: @user.errors, status: :unprocessable_entity
+      render json: {status: 'ERROR', message:'User not updated', data: @user.errors}, status: :unprocessable_entity
     end
   end
 
   # DELETE /users/1
   def destroy
     @user.destroy
+    render json: {status: 'SUCCESS', message: 'User deleted'}, status: :ok
   end
 
   private
