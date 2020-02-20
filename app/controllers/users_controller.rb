@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-    @user = User.find(params[:id])
+    @user = User.where(params[:id]).select("id, email, name, birthday, gender").first
     render json: {status: 'SUCCESS', message: 'Loaded user', data: @user}, status: :ok
   end
 
