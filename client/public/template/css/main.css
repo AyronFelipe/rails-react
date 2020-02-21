@@ -1,0 +1,17 @@
+body[data-background-full="purple3"] {
+    background: #652581 !important; 
+}
+
+button.btn-bom-cupom {
+    color: #fff;
+    background-color: #1aa06f;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.important-text {
+    color: #fff;
+    line-height: 150%;
+    font-weight: 300;
+}
