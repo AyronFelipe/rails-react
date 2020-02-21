@@ -1,24 +1,21 @@
-# README
+# Configurations
+Clone the project, then run the following commands:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Rails Commands
+The first command that you will run is:
+    `bundle`
 
-Things you may want to cover:
+After that you will run:
+    `rake db:migrate`
 
-* Ruby version
+Then you will run:
+    `rake db:seed`
 
-* System dependencies
+## React Commands
+Run:
+    `cd client && yarn install && yarn start`
 
-* Configuration
+If the command not work, try to run one command at time.
+**The link to live demo: [link to live demo](https://fierce-mountain-28738.herokuapp.com/)**
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+*Enjoy ;D*
